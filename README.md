@@ -29,7 +29,7 @@ node server/server.js
 Run application in new console:
 
 ```
-ng serv
+ng serve
 ```
 Go to [http://localhost:4200](http://localhost:4200) in your browser.
 
