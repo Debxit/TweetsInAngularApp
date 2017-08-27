@@ -1,0 +1,46 @@
+
+    <!--<p>-->
+    <!--user works!-->
+    <!--</p>-->
+    <div class="row">
+        <div class="col-6 col-sm-4">
+            <form (submit)="addHashtag(hashtag.value); hashtag.value='' ">
+                <label for="hashtag">hashtag:</label>
+                <input  type="text" #hashtag>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6 ">
+            <p>Searched hashtags:</p>
+            <ul>
+                <li *ngFor="let hashtag of hashtags">
+                    {{hashtag}}
+                    <button  class="btn btn-primary btn-sm"  (click)="deleteHashtag(hashtag)">X</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <button class="btn btn-primary" (click)="showTweets(hashtags)">Search</button>
+
+<div class="tweets">
+    <div class="row">
+        <div *ngFor="let item of tweetsdata" class="col-6 col-lg-4 mr-b">
+            <div class="tweet">
+                <button class="tweet-delete btn btn-primary btn-sm" (click)="deleteTweet(item.id)"> X</button>
+                <div class="tweet-image">
+                    <img src={{item.user.profile_image_url}}>
+                </div>
+                <div class="right-content">
+                    <span class="tweet-title">{{item.user.name}}</span>
+                    <div class="tweet-content">
+                        <p>{{item.full_text}}</p>
+                        <!--<img src={{item.entities.urls[0].expanded_url}} alt="">-->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
