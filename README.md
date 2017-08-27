@@ -26,7 +26,7 @@ Run server:
 node server/server.js
 ```
 
-Run application:
+Run application in new console:
 
 ```
 ng serv
